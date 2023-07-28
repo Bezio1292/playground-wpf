@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dependency Properties", "Dependency Properties\Dependency Properties.csproj", "{5B85A8E4-359D-4301-A966-8F781799C8C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsStoreClone", "WindowsStoreClone\WindowsStoreClone.csproj", "{265586F9-B034-40BE-906E-A0025E565FAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsStoreClone", "WindowsStoreClone\WindowsStoreClone.csproj", "{6E6FBA3A-59F6-4BF3-B456-984FC4FB5E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{5B85A8E4-359D-4301-A966-8F781799C8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B85A8E4-359D-4301-A966-8F781799C8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B85A8E4-359D-4301-A966-8F781799C8C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{265586F9-B034-40BE-906E-A0025E565FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{265586F9-B034-40BE-906E-A0025E565FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{265586F9-B034-40BE-906E-A0025E565FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{265586F9-B034-40BE-906E-A0025E565FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6FBA3A-59F6-4BF3-B456-984FC4FB5E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6FBA3A-59F6-4BF3-B456-984FC4FB5E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6FBA3A-59F6-4BF3-B456-984FC4FB5E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6FBA3A-59F6-4BF3-B456-984FC4FB5E1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

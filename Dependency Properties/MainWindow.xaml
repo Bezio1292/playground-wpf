@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <!-- Using Dependency Property -->
+        <!-- Using Dependency Property: First Demo -->
         <TextBlock Name="firstDemoTextBlock" FontSize="30" Text="First Demo: Using Dependency Property" FontWeight="Bold" TextAlignment="Center">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
@@ -22,6 +22,44 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <!-- Using custom Dependency Property -->
+
+        <!-- Using custom Dependency Property: Second Demo -->
+        <Button Name="increaseButton" FontSize="30" Margin="0,20,0,0" Click="increaseButton_Click" Content="Increase Awesomeness by 10"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <uc:DemoUserControl x:Name="demoAUserControl" 
+                                FontSize="30" 
+                                Awesomeness="50"
+                                Postfix="A">
+                <uc:DemoUserControl.Style>
+                    <Style TargetType="uc:DemoUserControl">
+                        <Style.Triggers>
+                            <Trigger Property="Awesomeness" Value="100">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </uc:DemoUserControl.Style>
+            </uc:DemoUserControl>
+        
+            <Label Content="{Binding ElementName=demoAUserControl, Path=Awesomeness}" FontSize="30" HorizontalContentAlignment="Center" Margin="30,0,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <uc:DemoUserControl x:Name="demoBUserControl" 
+                                FontSize="30" 
+                                Awesomeness="50"
+                                Postfix="B">
+                <uc:DemoUserControl.Style>
+                    <Style TargetType="uc:DemoUserControl">
+                        <Style.Triggers>
+                            <Trigger Property="AwesomenessOverValue" Value="True">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </uc:DemoUserControl.Style>
+            </uc:DemoUserControl>
+
+            <Label Content="{Binding ElementName=demoAUserControl, Path=Awesomeness}" FontSize="30" HorizontalContentAlignment="Center" Margin="30,0,0,0"/>
+        </StackPanel>
     </StackPanel>
 </Window>

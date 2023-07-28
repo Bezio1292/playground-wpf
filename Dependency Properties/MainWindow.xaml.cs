@@ -11,5 +11,15 @@ namespace Dependency_Properties
         {
             InitializeComponent();
         }
+
+        private void increaseButton_Click(object sender, RoutedEventArgs e)
+        {
+            demoAUserControl.Awesomeness += 10;
+            demoBUserControl.Awesomeness += 10;
+            if (demoBUserControl.Awesomeness >= 100)
+                demoBUserControl.AwesomenessOverValue = true;
+            else
+                demoBUserControl.AwesomenessOverValue = false;
+        }
     }
 }

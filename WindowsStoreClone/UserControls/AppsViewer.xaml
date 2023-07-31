@@ -48,7 +48,7 @@
         </ScrollViewer>
 
         <Button Name="ScrollRightButton"
-                Content="&lt;"
+                Content="&gt;"
                 Click="ScrollRightButton_Click"
                 Width="40"
                 Height="40"

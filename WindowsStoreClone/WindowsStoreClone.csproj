@@ -64,6 +64,9 @@
     <Compile Include="UserControls\AppsViewer.xaml.cs">
       <DependentUpon>AppsViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ProductivityTopApps.xaml.cs">
+      <DependentUpon>ProductivityTopApps.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TopApps.xaml.cs">
       <DependentUpon>TopApps.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\AppsViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProductivityTopApps.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace WindowsStoreClone.UserControls
 {
@@ -38,6 +39,16 @@ namespace WindowsStoreClone.UserControls
         {
             int widthOfOneApp = (int)(presentedApps.First().ActualWidth + 2 * presentedApps.First().Margin.Left);
             AppsScrollView.ScrollToHorizontalOffset(AppsScrollView.HorizontalOffset + 3 * widthOfOneApp);
+        }
+
+        private void AppsScrollView_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            e.Handled = true;
+            var eventArg = new MouseWheelEventArgs(e.MouseDevice, e.Timestamp, e.Delta);
+            eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            eventArg.Source = sender;
+            var parent = (sender as Control).Parent as UIElement;
+            parent.RaiseEvent(eventArg);
         }
     }
 }

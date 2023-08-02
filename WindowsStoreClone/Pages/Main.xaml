@@ -38,6 +38,19 @@
                     HorizontalScrollBarVisibility="Hidden"
                     VerticalScrollBarVisibility="Hidden"
                     >
+                    <ScrollViewer.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        From="0"
+                                        To="1"
+                                        Duration="0:0:1"
+                                        Storyboard.TargetProperty="Opacity"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ScrollViewer.Triggers>
                     <StackPanel
                         Name="MainHomeStackPanel"
                         VerticalAlignment="top"

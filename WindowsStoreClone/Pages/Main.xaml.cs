@@ -38,8 +38,7 @@ namespace WindowsStoreClone.Pages
                 To = 1,
                 Duration = new Duration(new TimeSpan(0, 0, 1))
             };
-            // Commented because c# code has lower priority than XAML code so it wouldn't be executed anyway.
-            //element.BeginAnimation(UIElement.OpacityProperty, animation);
+            element.BeginAnimation(UIElement.OpacityProperty, animation);
 
         }
         

@@ -37,6 +37,7 @@
                     Margin="10"
                     HorizontalScrollBarVisibility="Hidden"
                     VerticalScrollBarVisibility="Hidden"
+                    Loaded="MainScrollViewer_Loaded"
                     >
                     <ScrollViewer.Triggers>
                         <EventTrigger RoutedEvent="Loaded">

@@ -8,8 +8,8 @@
              Name="ReviewsUserControl"
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel
+        Name="ReviewMainStackPanel"
         Width="{Binding ElementName=ReviewsUserControl, Path=ActualWidth}"
-        Loaded="StackPanel_Loaded"
         Background="#2e2e2e"
         />
 

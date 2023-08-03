@@ -24,14 +24,12 @@ namespace WindowsStoreClone.UserControls.AppDetailsTabContent
         public Reviews()
         {
             InitializeComponent();
-        }
-
-        private void StackPanel_Loaded(object sender, RoutedEventArgs e)
-        {
-            for(int i = 0; i < 9; ++i)
+            ReviewMainStackPanel.Children.Clear();
+            for (int i = 0; i < 5; ++i)
             {
-                (sender as StackPanel).Children.Add(new AReview());
+                ReviewMainStackPanel.Children.Add(new AReview());
             }
         }
+
     }
 }

@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WindowsStoreClone.UserControls;
 
 namespace WindowsStoreClone.Pages
 {
@@ -21,17 +11,35 @@ namespace WindowsStoreClone.Pages
     /// </summary>
     public partial class Main : Page
     {
+
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public Main()
         {
             InitializeComponent();
+
+            DealsAppsViewer.AppClicked += AnAppClicked;
+            ProductivityAppsViewer.AppClicked += AnAppClicked;
+            EntertainmentTopFreeAppsViewer.AppClicked += AnAppClicked;
+            GamingTopFreeGamesAppsViewer.AppClicked += AnAppClicked;
+            AppsViewer.AppClicked += AnAppClicked;
+            MostPopularAppsViewer.AppClicked += AnAppClicked;
+            TopFreeAppsViewer.AppClicked += AnAppClicked;
+            TopFreeGamesAppsViewer.AppClicked += AnAppClicked;
+        }
+
+        private void AnAppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked?.Invoke(sender, e);
         }
 
         // c# code has LOWER priority than XAML code !!!!
-        
+
         private void MainScrollViewer_Loaded(object sender, RoutedEventArgs e)
         {
-            UIElement element= sender as UIElement;
-            element.Opacity= 0;
+            UIElement element = sender as UIElement;
+            element.Opacity = 0;
             DoubleAnimation animation = new DoubleAnimation()
             {
                 From = 0,
@@ -41,6 +49,6 @@ namespace WindowsStoreClone.Pages
             element.BeginAnimation(UIElement.OpacityProperty, animation);
 
         }
-        
+
     }
 }

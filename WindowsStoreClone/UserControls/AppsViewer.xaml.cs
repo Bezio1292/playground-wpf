@@ -14,6 +14,9 @@ namespace WindowsStoreClone.UserControls
 
         List<AnApp> presentedApps;
 
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public AppsViewer()
         {
             InitializeComponent();
@@ -23,8 +26,14 @@ namespace WindowsStoreClone.UserControls
             for (int i = 0; i < 9; ++i)
             {
                 AnApp app = new AnApp();
+                app.AppClicked += Curr_AppClicked;
                 presentedApps.Add(app);
             }
+        }
+
+        private void Curr_AppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked?.Invoke(sender, e);
         }
 
         // Because we using data binding we have to use diffrent method than:

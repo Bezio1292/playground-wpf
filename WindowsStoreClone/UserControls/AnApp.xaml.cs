@@ -23,6 +23,12 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class AnApp : UserControl
     {
+        public string AppName { get; set; }
+        public ImageSource AppImageSource { get; set; }
+
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
+
         public AnApp()
         {
             InitializeComponent();
@@ -31,16 +37,17 @@ namespace WindowsStoreClone.UserControls
             FileInfo myRandomFile = new FileInfo(filepaths[StaticRandom.Next(filepaths.Count)]);
             
             Uri appImageSourceUri = new Uri(myRandomFile.FullName, UriKind.RelativeOrAbsolute);
-            string appName = (new CultureInfo("en-US", false).TextInfo).ToTitleCase(myRandomFile.Name.Split('-').Last().Split('.').First());
+            AppName = (new CultureInfo("en-US", false).TextInfo).ToTitleCase(myRandomFile.Name.Split('-').Last().Split('.').First());
+            AppImageSource = new BitmapImage(appImageSourceUri);
 
-            AppNameText.Text = appName;
-            ProductImage.Source = new BitmapImage(appImageSourceUri);
+            AppNameText.Text = AppName;
+            ProductImage.Source = AppImageSource;
 
         }
 
         private void ProductImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            AppClicked?.Invoke(this, e);
         }
     }
 }

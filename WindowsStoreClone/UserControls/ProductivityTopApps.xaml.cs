@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MiscUtil;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +23,8 @@ namespace WindowsStoreClone.UserControls
     /// </summary>
     public partial class ProductivityTopApps : UserControl
     {
+        public delegate void OnAnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAnAppClicked AppClicked;
         public ProductivityTopApps()
         {
             InitializeComponent();
@@ -27,7 +32,10 @@ namespace WindowsStoreClone.UserControls
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            Image appImage = sender as Image;
+            string appName = (new CultureInfo("en-US", false).TextInfo).ToTitleCase(appImage.Source.ToString().Split('/').Last().Split('-').Last().Split('.').First());
 
+            AppClicked.Invoke(new AnApp(appName, appImage.Source), e);
         }
     }
 }

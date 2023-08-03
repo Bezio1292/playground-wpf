@@ -27,6 +27,8 @@ namespace WindowsStoreClone.Pages
             MostPopularAppsViewer.AppClicked += AnAppClicked;
             TopFreeAppsViewer.AppClicked += AnAppClicked;
             TopFreeGamesAppsViewer.AppClicked += AnAppClicked;
+
+            ProductivityTopApps.AppClicked += AnAppClicked;
         }
 
         private void AnAppClicked(AnApp sender, RoutedEventArgs e)

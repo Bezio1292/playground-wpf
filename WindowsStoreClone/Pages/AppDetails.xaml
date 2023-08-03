@@ -51,6 +51,7 @@
                 </TabItem>
                 
                 <TabItem Header="Related">
+                    <ucappdet:Related x:Name="RelatedTabUC"/>
                 </TabItem>
             </TabControl>
         </StackPanel>

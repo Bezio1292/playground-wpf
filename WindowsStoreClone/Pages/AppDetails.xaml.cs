@@ -36,10 +36,11 @@ namespace WindowsStoreClone.Pages
 
             //avaliable through x:Name
             AppDetailsAndBackgroundUC.BackButtonClicked += AppDetailsAndBackgroundUC_BackButtonClicked;
-            OverviewTabUC.AppClicked += OverviewTabUC_AppClicked;
+            OverviewTabUC.AppClicked += TabUC_AppClicked;
+            RelatedTabUC.AppClicked += TabUC_AppClicked;
         }
 
-        private void OverviewTabUC_AppClicked(AnApp sender, RoutedEventArgs e)
+        private void TabUC_AppClicked(AnApp sender, RoutedEventArgs e)
         {
             AppClicked?.Invoke(sender, e);
         }

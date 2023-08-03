@@ -23,6 +23,9 @@ namespace WindowsStoreClone.Pages
     {
         public delegate void OnBackButtonClicked(object sender, RoutedEventArgs e);
         public event OnBackButtonClicked BackButtonClicked;
+
+        public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
+        public event OnAppClicked AppClicked;
         public AppDetails(AnApp anApp)
         {
             InitializeComponent();
@@ -33,6 +36,12 @@ namespace WindowsStoreClone.Pages
 
             //avaliable through x:Name
             AppDetailsAndBackgroundUC.BackButtonClicked += AppDetailsAndBackgroundUC_BackButtonClicked;
+            OverviewTabUC.AppClicked += OverviewTabUC_AppClicked;
+        }
+
+        private void OverviewTabUC_AppClicked(AnApp sender, RoutedEventArgs e)
+        {
+            AppClicked?.Invoke(sender, e);
         }
 
         private void AppDetailsAndBackgroundUC_BackButtonClicked(object sender, RoutedEventArgs e)

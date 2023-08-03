@@ -47,6 +47,7 @@
                 </TabItem>
                 
                 <TabItem Header="Reviews">
+                    <ucappdet:Reviews/>
                 </TabItem>
                 
                 <TabItem Header="Related">

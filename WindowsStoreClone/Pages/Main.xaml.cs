@@ -15,6 +15,9 @@ namespace WindowsStoreClone.Pages
         public delegate void OnAppClicked(AnApp sender, RoutedEventArgs e);
         public event OnAppClicked AppClicked;
 
+        public delegate void OnTopAppButtonClicked(object sender, RoutedEventArgs e);
+        public event OnTopAppButtonClicked TopAppButtonClicked;
+
         public Main()
         {
             InitializeComponent();
@@ -30,6 +33,13 @@ namespace WindowsStoreClone.Pages
 
             ProductivityTopApps.AppClicked += AnAppClicked;
             TopApps.AppClicked+= AnAppClicked;
+
+            TopApps.TopAppButtonClicked += TopApps_TopAppButtonClicked;
+        }
+
+        private void TopApps_TopAppButtonClicked(object sender, RoutedEventArgs e)
+        {
+            TopAppButtonClicked?.Invoke(sender, e);
         }
 
         private void AnAppClicked(AnApp sender, RoutedEventArgs e)

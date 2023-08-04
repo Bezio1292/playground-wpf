@@ -73,6 +73,7 @@
                     FontSize="18"
                     Grid.Row="0"
                     Grid.Column="0"
+                    Click="TopAppsButton_Click"
                     Margin="2,2,2,2">
                 Top Apps
             </Button>

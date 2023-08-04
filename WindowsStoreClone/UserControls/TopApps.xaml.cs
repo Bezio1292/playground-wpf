@@ -24,6 +24,9 @@ namespace WindowsStoreClone.UserControls
         public delegate void OnAnAppClicked(AnApp sender, RoutedEventArgs e);
         public event OnAnAppClicked AppClicked;
 
+        public delegate void OnTopAppButtonClicked(object sender, RoutedEventArgs e);
+        public event OnTopAppButtonClicked TopAppButtonClicked;
+
         public TopApps()
         {
             InitializeComponent();
@@ -35,6 +38,11 @@ namespace WindowsStoreClone.UserControls
             string appName = (new CultureInfo("en-US", false).TextInfo).ToTitleCase(appImage.Source.ToString().Split('/').Last().Split('-').Last().Split('.').First());
 
             AppClicked?.Invoke(new AnApp(appName, appImage.Source), e);
+        }
+
+        private void TopAppsButton_Click(object sender, RoutedEventArgs e)
+        {
+            TopAppButtonClicked?.Invoke(sender, e);
         }
     }
 }

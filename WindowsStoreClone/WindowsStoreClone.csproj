@@ -94,6 +94,9 @@
     <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml.cs">
       <DependentUpon>HamburgerMenuApp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuAppList.xaml.cs">
+      <DependentUpon>HamburgerMenuAppList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\HeaderRightButtons.xaml.cs">
       <DependentUpon>HeaderRightButtons.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuAppList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -262,6 +262,10 @@
                 </ScrollViewer>
             </TabItem>
         </TabControl>
-        
+        <uc:HeaderRightButtons 
+            x:Name="RightHeaderButtons"
+            Grid.Row="0" Grid.Column="1"
+            Grid.ColumnSpan="2"
+            />
     </Grid>
 </Page>

@@ -26,6 +26,7 @@ namespace WindowsStoreClone
     {
         private Main mainWindowContentPage;
         private TopAppsWrapped myTopAppsWrappedPage;
+        private DownloadsAndUpdates myDownloadsAndUpdatesPage;
 
         public MainWindow()
         {
@@ -39,11 +40,14 @@ namespace WindowsStoreClone
             mainWindowContentPage.TopAppButtonClicked += MainWindowContentPage_TopAppButtonClicked;
 
             mainWindowContentPage.HeaderRightButtonDownloadButtonCLick += MainWindowContentPage_HeaderRightButtonDownloadButtonCLick;
+
+            myDownloadsAndUpdatesPage= new DownloadsAndUpdates();
+            myDownloadsAndUpdatesPage.BackButtonClicked += BackButtonClicked;
         }
 
         private void MainWindowContentPage_HeaderRightButtonDownloadButtonCLick(object sender, RoutedEventArgs e)
         {
-            MainWindowFrame.Content = new AllOwned();
+            MainWindowFrame.Content = myDownloadsAndUpdatesPage;
         }
 
         private void MainWindowContentPage_TopAppButtonClicked(object sender, RoutedEventArgs e)

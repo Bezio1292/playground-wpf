@@ -33,34 +33,39 @@ namespace WindowsStoreClone.UserControls.HamburgerMenuViews
         public void FilterByType(string inFilter)
         {
             AppsOnFilter = AllApps.Where(p => p.Type == inFilter).ToList<HamburgerMenuApp>();
-            MainStackPanel.Children.Clear();
-            foreach (HamburgerMenuApp item in AppsOnFilter)
-            {
-                MainStackPanel.Children.Add(item);
-            }
+            AddToMainStackPanel(AppsOnFilter);
+
         }
 
         public void AddAll()
         {
-            MainStackPanel.Children.Clear();
-            foreach (HamburgerMenuApp item in AllApps)
-            {
-                MainStackPanel.Children.Add(item);
-            }
+            AppsOnFilter = new List<HamburgerMenuApp>();
+            AddToMainStackPanel(AllApps);
         }
 
         public void SortByName()
         {
-            List<HamburgerMenuApp> AllAppsSorted = AllApps.OrderBy(p => p.AppName).ToList();
-            foreach(HamburgerMenuApp item in AllAppsSorted)
-            {
-                MainStackPanel.Children.Add(item);
-            }
+            List<HamburgerMenuApp> AllAppsSorted = new List<HamburgerMenuApp>();
+            if (AppsOnFilter.Count < 1)
+                AllAppsSorted = AllApps.OrderBy(p => p.AppName).ToList();
+            else
+                AllAppsSorted = AppsOnFilter.OrderBy(p => p.AppName).ToList();
+            AddToMainStackPanel(AllAppsSorted);
         }
         public void SortByDate()
         {
-            List<HamburgerMenuApp> AllAppsSorted = AllApps.OrderBy(p => p.Purchased).ToList();
-            foreach (HamburgerMenuApp item in AllAppsSorted)
+            List<HamburgerMenuApp> AllAppsSorted = new List<HamburgerMenuApp>();
+            if (AppsOnFilter.Count < 1)
+                AllAppsSorted = AllApps.OrderByDescending(p => p.Purchased).ToList();
+            else
+                AllAppsSorted = AppsOnFilter.OrderByDescending(p => p.Purchased).ToList();
+            AddToMainStackPanel(AllAppsSorted);
+        }
+
+        private void AddToMainStackPanel(List<HamburgerMenuApp> inList)
+        {
+            MainStackPanel.Children.Clear();
+            foreach(HamburgerMenuApp item in inList)
             {
                 MainStackPanel.Children.Add(item);
             }

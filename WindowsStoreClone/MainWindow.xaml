@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowsStoreClone"
         xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+        xmlns:ucham="clr-namespace:WindowsStoreClone.UserControls.HamburgerMenuViews"
         mc:Ignorable="d"
         Name="MainWindowMetro"
         Title="MainWindow" Height="800" Width="1350">

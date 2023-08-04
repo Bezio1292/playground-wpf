@@ -21,6 +21,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <uc:HeaderRightButtons 
+            x:Name="RightHeaderButtons"
+            Grid.Row="0" Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Panel.ZIndex="2"
+            />
+        
         <TabControl
             Name="MainTabControl"
             Visibility="Visible"
@@ -262,10 +269,6 @@
                 </ScrollViewer>
             </TabItem>
         </TabControl>
-        <uc:HeaderRightButtons 
-            x:Name="RightHeaderButtons"
-            Grid.Row="0" Grid.Column="1"
-            Grid.ColumnSpan="2"
-            />
+        
     </Grid>
 </Page>

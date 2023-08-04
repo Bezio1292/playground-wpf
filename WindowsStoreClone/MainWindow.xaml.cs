@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WindowsStoreClone.Pages;
 using WindowsStoreClone.UserControls;
+using WindowsStoreClone.UserControls.HamburgerMenuViews;
 
 namespace WindowsStoreClone
 {
@@ -36,7 +37,12 @@ namespace WindowsStoreClone
             myTopAppsWrappedPage.BackButtonClicked += BackButtonClicked;
             mainWindowContentPage.TopAppButtonClicked += MainWindowContentPage_TopAppButtonClicked;
 
+            mainWindowContentPage.HeaderRightButtonDownloadButtonCLick += MainWindowContentPage_HeaderRightButtonDownloadButtonCLick;
+        }
 
+        private void MainWindowContentPage_HeaderRightButtonDownloadButtonCLick(object sender, RoutedEventArgs e)
+        {
+            MainWindowFrame.Content = new AllOwned();
         }
 
         private void MainWindowContentPage_TopAppButtonClicked(object sender, RoutedEventArgs e)

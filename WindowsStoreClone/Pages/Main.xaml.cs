@@ -18,6 +18,9 @@ namespace WindowsStoreClone.Pages
         public delegate void OnTopAppButtonClicked(object sender, RoutedEventArgs e);
         public event OnTopAppButtonClicked TopAppButtonClicked;
 
+        public delegate void OnDownloadButtonCLick(object sender, RoutedEventArgs e);
+        public event OnDownloadButtonCLick HeaderRightButtonDownloadButtonCLick;
+
         public Main()
         {
             InitializeComponent();
@@ -35,6 +38,12 @@ namespace WindowsStoreClone.Pages
             TopApps.AppClicked+= AnAppClicked;
 
             TopApps.TopAppButtonClicked += TopApps_TopAppButtonClicked;
+            RightHeaderButtons.HeaderRightButtonDownloadButtonCLick += RightHeaderButtons_HeaderRightButtonDownloadButtonCLick;
+        }
+
+        private void RightHeaderButtons_HeaderRightButtonDownloadButtonCLick(object sender, RoutedEventArgs e)
+        {
+            HeaderRightButtonDownloadButtonCLick?.Invoke(sender, e);
         }
 
         private void TopApps_TopAppButtonClicked(object sender, RoutedEventArgs e)

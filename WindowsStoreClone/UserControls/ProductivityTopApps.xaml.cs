@@ -35,7 +35,7 @@ namespace WindowsStoreClone.UserControls
             Image appImage = sender as Image;
             string appName = (new CultureInfo("en-US", false).TextInfo).ToTitleCase(appImage.Source.ToString().Split('/').Last().Split('-').Last().Split('.').First());
 
-            AppClicked.Invoke(new AnApp(appName, appImage.Source), e);
+            AppClicked?.Invoke(new AnApp(appName, appImage.Source), e);
         }
     }
 }

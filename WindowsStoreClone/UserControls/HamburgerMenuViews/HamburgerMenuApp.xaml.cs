@@ -23,7 +23,7 @@ namespace WindowsStoreClone.UserControls.HamburgerMenuViews
         public HamburgerMenuApp()
         {
             InitializeComponent();
-            AppTypes = new List<string>() { "App", "Game", "Movie", "Avatar" };
+            AppTypes = new List<string>() { "Apps", "Games", "Movies", "Avatars" };
 
             List<string> filepaths = Directory.GetFiles(Environment.CurrentDirectory + @"\..\..\Images\MiniIcons", "*.png").ToList<string>();
             FileInfo myRandomFile = new FileInfo(filepaths[StaticRandom.Next(filepaths.Count)]);

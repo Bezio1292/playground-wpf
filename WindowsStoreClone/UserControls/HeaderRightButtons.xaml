@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d"
              Name="HeaderRightButtonUserControl"
              d:DesignHeight="40" d:DesignWidth="200"
@@ -20,6 +21,10 @@
                 Name="SearchTextBox"
                 Visibility="Collapsed"
                 Width="230" Margin="2"
+                mah:TextBoxHelper.ButtonCommand="{Binding TextBoxButtomCmd, Mode=OneWay}"
+                mah:TextBoxHelper.ClearTextButton="True"
+                mah:TextBoxHelper.UseFloatingWatermark="True"
+                mah:TextBoxHelper.Watermark="Search..."
                 />
         </Grid>
         <Menu Name="SignInMenu">

@@ -1,11 +1,4 @@
-﻿using Reservoom.Exceptions;
-using Reservoom.Models;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Reservoom.ViewModels;
 using System.Windows;
 
 namespace Reservoom
@@ -17,28 +10,11 @@ namespace Reservoom
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            Hotel hotel = new Hotel("Operator Suites");
-            try
+            MainWindow = new MainWindow()
             {
-
-            hotel.MakeReservation(new Reservation(
-                new RoomID(2,2),
-                "Arata",
-                new DateTime(2000, 1, 3),
-                new DateTime(2000, 1, 4)));
-
-            hotel.MakeReservation(new Reservation(
-                new RoomID(2, 2),
-                "Arata",
-                new DateTime(2000, 1, 3),
-                new DateTime(2000, 1, 4)));
-
-            }
-            catch (ReservationConflictException ex)
-            {
-
-            }
-            IEnumerable<Reservation> reservations = hotel.GetAllReservations();
+                DataContext = new MainViewModel()
+            };
+            MainWindow.Show();
 
             base.OnStartup(e);
         }

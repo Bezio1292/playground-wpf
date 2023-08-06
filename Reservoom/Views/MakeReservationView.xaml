@@ -26,8 +26,13 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Username" />
-            <TextBox Grid.Row="1" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,0" />
+            <TextBlock 
+                Grid.Row="0"
+                Text="Username" />
+            <TextBox 
+                Grid.Row="1" 
+                Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" 
+                Margin="0,5,0,0" />
         </Grid>
         <Grid Grid.Row="2" Margin="0,10,0,0">
             <Grid.RowDefinitions>
@@ -40,11 +45,23 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="5,0,0,0" Text="Floor No." />
-            <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding FloorNumber, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,0" />
+            <TextBlock 
+                Grid.Row="0" Grid.Column="0" 
+                Margin="5,0,0,0" 
+                Text="Floor No." />
+            <TextBox 
+                Grid.Row="1" Grid.Column="0" 
+                Text="{Binding FloorNumber, UpdateSourceTrigger=PropertyChanged}" 
+                Margin="0,5,0,0" />
 
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5,0,0,0" Text="Room No." />
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10,5,0,0" />
+            <TextBlock 
+                Grid.Row="0" Grid.Column="1" 
+                Margin="5,0,0,0" 
+                Text="Room No." />
+            <TextBox 
+                Grid.Row="1" Grid.Column="1" 
+                Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}" 
+                Margin="10,5,0,0" />
         </Grid>
         <Grid Grid.Row="3" Margin="0,10,0,0">
             <Grid.RowDefinitions>
@@ -57,15 +74,32 @@
             </Grid.ColumnDefinitions>
 
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Text="Start Date" />
-            <DatePicker Grid.Row="1" Grid.Column="0" Margin="0,5,0,0" SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock 
+                Grid.Row="0" Grid.Column="0" 
+                Margin="10,0,0,0" 
+                Text="Start Date" />
+            <DatePicker 
+                Grid.Row="1" Grid.Column="0" 
+                Margin="0,5,0,0" 
+                SelectedDate="{Binding StartDate, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="End Date" />
-            <DatePicker Grid.Row="1" Grid.Column="1" Margin="10,5,0,0" SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock 
+                Grid.Row="0" Grid.Column="1" 
+                Margin="10,0,0,0" 
+                Text="End Date" />
+            <DatePicker 
+                Grid.Row="1" Grid.Column="1" 
+                Margin="10,5,0,0" 
+                SelectedDate="{Binding EndDate, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,25,0,0">
-            <Button Content="Sumbit" Command="{Binding SubmitCommand}"/>
-            <Button Margin="5,0,0,0" Content="Cancel" Command="{Binding CancelCommand}"/>
+            <Button 
+                Content="Sumbit" 
+                Command="{Binding SubmitCommand}"/>
+            <Button 
+                Margin="5,0,0,0" 
+                Content="Cancel" 
+                Command="{Binding CancelCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>

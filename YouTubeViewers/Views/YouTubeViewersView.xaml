@@ -22,6 +22,7 @@
             <TextBlock Grid.Column="0" FontSize="32" Text="YouTube Viewer"/>
             
             <Button 
+                Command="{Binding AddYouTubeViewersCommand}"
                 Grid.Column="1" 
                 Content="Add" 
                 FontSize="16"
@@ -34,9 +35,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            
-            <components:YouTubeViewerListing Grid.Column="0"/>
-            <components:YouTubeViewerDetails Grid.Column="1" Margin="20 0 0 0"/>
+
+            <components:YouTubeViewerListing Grid.Column="0" DataContext="{Binding YouTubeViewersListingViewModel}"/>
+            <components:YouTubeViewerDetails Grid.Column="1" Margin="20 0 0 0" DataContext="{Binding YouTubeViewersDetailsViewModel}"/>
             
         </Grid>
     </Grid>

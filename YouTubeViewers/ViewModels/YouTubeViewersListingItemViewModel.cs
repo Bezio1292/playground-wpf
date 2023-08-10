@@ -4,18 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using YouTubeViewers.Models;
 
 namespace YouTubeViewers.ViewModels
 {
     class YouTubeViewersListingItemViewModel
     {
-        public string Username { get; }
+        public YouTubeViewer YouTubeViewer { get; }
+
+        public string Username => YouTubeViewer.Username;
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
 
-        public YouTubeViewersListingItemViewModel(string username)
+
+        public YouTubeViewersListingItemViewModel(YouTubeViewer youTubeViewer)
         {
-            Username = username;
+            YouTubeViewer = youTubeViewer;
         }
     }
 }

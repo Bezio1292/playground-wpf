@@ -14,59 +14,90 @@
             CornerRadius="5"
             Padding="20"
             >
-            <Grid Grid.IsSharedSizeScope="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="{Binding Username}" FontSize="24"/>
-
-                <Grid Grid.Row="1" Margin="0 20 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedYouTubeViewer}" Value="False">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
                     <TextBlock 
+                        Grid.Column="0" 
+                        TextWrapping="WrapWithOverflow"
+                        Text="Please Select a YouTube viewer to see their details."
+                        />
+                </Grid>
+                <Grid Grid.IsSharedSizeScope="True">
+                    
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding HasSelectedYouTubeViewer}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding Username}" FontSize="24"/>
+
+                    <Grid Grid.Row="1" Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock 
                         Grid.Column="0" 
                         FontWeight="Bold"
                         Text="Is Subscribed?"
                         />
-                    <!-- Displaying bool type using view model property -->
-                    <TextBlock
+                        <!-- Displaying bool type using view model property -->
+                        <TextBlock
                         Grid.Column="1"
                         Margin="20 0 0 0"
                         Text="{Binding IsSubscribedDisplay}"
                         />
-                </Grid>
+                    </Grid>
 
-                <Grid Grid.Row="2" Margin="0 20 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock 
+                    <Grid Grid.Row="2" Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock 
                         Grid.Column="0" 
                         FontWeight="Bold"
                         Text="Is Member?"/>
 
-                    <!-- Displaying bool type using data trigger -->
-                    <TextBlock
+                        <!-- Displaying bool type using data trigger -->
+                        <TextBlock
                         Grid.Column="1"
                         Margin="20 0 0 0">
-                        <TextBlock.Style>
-                            <Style>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsMember}" Value="True">
-                                        <Setter Property="TextBlock.Text" Value="Yes"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsMember}" Value="False">
-                                        <Setter Property="TextBlock.Text" Value="No"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
+                            <TextBlock.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsMember}" Value="True">
+                                            <Setter Property="TextBlock.Text" Value="Yes"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsMember}" Value="False">
+                                            <Setter Property="TextBlock.Text" Value="No"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>

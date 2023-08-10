@@ -20,7 +20,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="Arata" FontSize="24"/>
+                <TextBlock Grid.Row="0" Text="{Binding Username}" FontSize="24"/>
 
                 <Grid Grid.Row="1" Margin="0 20 0 0">
                     <Grid.ColumnDefinitions>
@@ -32,10 +32,11 @@
                         FontWeight="Bold"
                         Text="Is Subscribed?"
                         />
+                    <!-- Displaying bool type using view model property -->
                     <TextBlock
                         Grid.Column="1"
                         Margin="20 0 0 0"
-                        Text="Yes"
+                        Text="{Binding IsSubscribedDisplay}"
                         />
                 </Grid>
 
@@ -47,13 +48,25 @@
                     <TextBlock 
                         Grid.Column="0" 
                         FontWeight="Bold"
-                        Text="Is Member?" 
-                        />
+                        Text="Is Member?"/>
+
+                    <!-- Displaying bool type using data trigger -->
                     <TextBlock
                         Grid.Column="1"
-                        Margin="20 0 0 0"
-                        Text="Yes"
-                        />
+                        Margin="20 0 0 0">
+                        <TextBlock.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsMember}" Value="True">
+                                        <Setter Property="TextBlock.Text" Value="Yes"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsMember}" Value="False">
+                                        <Setter Property="TextBlock.Text" Value="No"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
                 </Grid>
             </Grid>
         </Border>

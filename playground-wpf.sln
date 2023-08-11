@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsStoreClone", "Window
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reservoom", "Reservoom\Reservoom.csproj", "{AAD188E9-FD97-4BBC-814D-8A4FC1058A83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeViewers", "YouTubeViewers\YouTubeViewers.csproj", "{177DA67B-A84D-4BC0-A1FB-A8E8507D4487}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouTubeViewers", "YouTubeViewers\YouTubeViewers.csproj", "{177DA67B-A84D-4BC0-A1FB-A8E8507D4487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM-Tests", "MVVM-Tests\MVVM-Tests.csproj", "{06550663-6AE0-474D-8B3C-D4C0B7317E9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{177DA67B-A84D-4BC0-A1FB-A8E8507D4487}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{177DA67B-A84D-4BC0-A1FB-A8E8507D4487}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{177DA67B-A84D-4BC0-A1FB-A8E8507D4487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06550663-6AE0-474D-8B3C-D4C0B7317E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06550663-6AE0-474D-8B3C-D4C0B7317E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06550663-6AE0-474D-8B3C-D4C0B7317E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06550663-6AE0-474D-8B3C-D4C0B7317E9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
